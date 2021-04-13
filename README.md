@@ -8,6 +8,9 @@ Calculadora vetorial feita às pressas.
 - Calcular o produto escalar
 Usando Python. O exe foi feito usando o Pyinstaller.
 
+## Limitações
+A calculadora só aceita números inteiros como parâmetros. Outros números como os reais, racionais e irracionais não funcionam na calculadora. (Ex: 3,5 e √2 são números que não funcionam.) 
+
 ## Instalação / Uso
 A calculadora só precisa ser executada, não há necessidade de instalação.
 [Clique aqui para baixar a calculadora.](https://github.com/iCarlosCode/cvfp/blob/main/CVFP.exe?raw=true)
