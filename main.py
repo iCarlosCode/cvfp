@@ -57,6 +57,7 @@ def calcular():
     resultado_lbl.configure(text= 'Escolha um modo! :P')
 
 def habilitarC3():
+    print(modo.get())
     if (modo.get() == modos[3]):
         c3_lbl.configure(text='Preencha as coordenadas 3')
         coordenada3_entry_x.configure(state='enabled')
@@ -70,6 +71,7 @@ def habilitarC3():
 
     if (modo.get() == modos[8]):
         c4_lbl.configure(text='Preencha o escalar e as coordenadas')
+        c4_lbl.grid_configure(sticky='W')
         coordenada1_entry_x.configure(state='disabled')
         coordenada1_entry_y.configure(state='disabled')
         coordenada1_entry_z.configure(state='disabled')
@@ -85,6 +87,7 @@ def habilitarC3():
         coordenada4_entry_z.configure(state='enabled')
     else:
         c4_lbl.configure(text='Para habilitar a opção abaixo, escolha a operação "Multiplicação Por Escalar"')
+        c4_lbl.grid_configure(sticky='E')
         coordenada1_entry_x.configure(state='enabled')
         coordenada1_entry_y.configure(state='enabled')
         coordenada1_entry_z.configure(state='enabled')
@@ -99,7 +102,7 @@ def habilitarC3():
 
 padding_up = 15
 c1_lbl = ttk.Label(window, text = "Preencha as coordenadas 1")
-c1_lbl.grid(column = 0, row = 0, columnspan = 4, padx = (5, 5), stick='W')
+c1_lbl.grid(column = 0, row = 0, columnspan = 2, padx = (5, 5), stick='E')
  
 x1_lbl = ttk.Label(window, text = "X:")
 x1_lbl.grid(column = 0, row = 1, sticky='E')
@@ -121,7 +124,7 @@ coordenada1_entry_z.grid(column = 5, row = 1)
  
 # LINHA DOIS
 c2_lbl = ttk.Label(window, text = "Preencha as coordenadas 2")
-c2_lbl.grid(column = 0, row = 2, columnspan = 4, pady= (padding_up,0), padx = (5, 5), stick='W')
+c2_lbl.grid(column = 0, row = 2, columnspan = 2, pady= (padding_up,0), padx = (5, 5), stick='E')
  
 x2_lbl = ttk.Label(window, text = "X:")
 x2_lbl.grid(column = 0, row = 3, sticky='E')
@@ -143,7 +146,7 @@ coordenada2_entry_z.grid(column = 5, row = 3)
 
 # LINHA 4
 c3_lbl = ttk.Label(window, text = "Preencha as coordenadas 3")
-c3_lbl.grid(column = 0, row = 4, columnspan=5, sticky='W', pady= (padding_up,0), padx = (5, 5))
+c3_lbl.grid(column = 0, row = 4, columnspan=6, sticky='W', pady= (padding_up,0), padx = (5, 5))
 
 #LINHA 5
 x3_lbl = ttk.Label(window, text = "X:")
@@ -166,7 +169,7 @@ coordenada3_entry_z.grid(column = 5, row = 5)
 
 # LINHA 6
 c4_lbl = ttk.Label(window, text = "Preencha as coordenadas 4")
-c4_lbl.grid(column = 0, row = 6, columnspan=5, sticky='W', pady= (padding_up,0), padx = (5, 5))
+c4_lbl.grid(column = 0, row = 6, columnspan=6, sticky='E', pady= (padding_up,0), padx = (5, 5))
 
 #LINHA 7
 
@@ -197,7 +200,7 @@ coordenada4_entry_z.grid(column = 5, row = 8)
 
 #LINHA 9
 escolha_lbl = ttk.Label(window, text = "Escolha uma operação:")
-escolha_lbl.grid(column = 0, row = 9, columnspan = 4, pady= (padding_up,0), padx = (5, 5), stick='W')
+escolha_lbl.grid(column = 0, row = 9, columnspan = 2, pady= (padding_up,0), padx = (5, 5), stick='E')
 
 modo = tk.StringVar()
 modos = ('Vetor por dois pontos','Produto Escalar','Produto Vetorial', 'Produto Misto', 'Soma', 'Subtração', 'Checar se são paralelos', 'Checar se são perpendiculares', 'Multiplicação Por Escalar')
@@ -207,10 +210,10 @@ modos_cb.grid(column = 2, row = 9, columnspan=5, sticky='WE', pady= (padding_up,
 
 #LINHA 10
 resultado_lbl = ttk.Label(window, text = "")
-resultado_lbl.grid(column = 0, row = 10, columnspan=3, pady= (padding_up,0), padx = (5, 5))
+resultado_lbl.grid(column = 0, row = 10, columnspan=3, sticky='E', pady= (padding_up-5,0), padx = (5, 5))
 
 calcular_btn = ttk.Button(window, text = "Calcular", command = calcular)
-calcular_btn.grid(column= 3, row = 10, columnspan=3, sticky='WE', pady= (padding_up,0), padx = (5, 5))
+calcular_btn.grid(column= 3, row = 10, columnspan=3, sticky='WE', pady= (padding_up-5,0), padx = (5, 5))
 
 window.after(10, habilitarC3)
 window.mainloop()
