@@ -13,6 +13,7 @@ Calculadora vetorial feita às pressas.
 - Multiplicar por escalar
 - Checar se vetores são paralelos
 - Checar se vetores são perpendiculares
+
 Calculadora feita em Python. O exe foi feito usando o Pyinstaller. A interface foi feita usando o Tkinter.
 
 ## Limitações
